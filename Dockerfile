@@ -28,3 +28,4 @@ RUN apk add --no-cache --virtual build-dependencies \
 && apk del build-dependencies
 
 RUN apk add --no-cache libcrypto1.0
+COPY telegraf.conf /etc/telegraf/telegraf.conf
