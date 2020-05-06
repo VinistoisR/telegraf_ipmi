@@ -17,9 +17,6 @@ services:
     image: <name_of_your_telegraf_image>
     stdin_open: true
     tty: true
-    labels:
-      io.rancher.container.pull_image: always
-      io.rancher.scheduler.global: 'true'
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock:ro
     - /sys:/rootfs/sys:ro
@@ -27,7 +24,6 @@ services:
     - /etc:/rootfs/etc:ro
     - /:/hostfs:ro
     stdin_open: true
-    mem_limit: 16777216
 ```
 another
 ```
@@ -53,9 +49,4 @@ services:
     - /etc:/rootfs/etc:ro
     - /:/hostfs:ro
     tty: true
-    links:
-    - influxdb:influxdb
-    labels:
-      io.rancher.container.pull_image: always
-      io.rancher.scheduler.global: 'true'
 ```      
